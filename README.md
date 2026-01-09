@@ -39,7 +39,7 @@ npm install pi-sdk-nextjs
 yarn add pi-sdk-nextjs
 ⚙️ Environment Variables
 Create a .env.local file in your Next.js project:
-Salin kode
+
 Env
 PI_API_KEY=your_pi_api_key
 PI_APP_ID=your_app_id
@@ -48,8 +48,7 @@ PI_CALLBACK_URL=http://localhost:3000/api/pi/callback
 All Pi verification must happen on the server.
 🚀 Basic Usage (Next.js App Router)
 
- Initialize the Pi Client
-Ts
+===== Initialize the Pi Client
 // lib/pi.ts
 import { PiClient } from "pi-sdk-nextjs";
 
@@ -59,8 +58,7 @@ export const piClient = new PiClient({
   callbackUrl: process.env.PI_CALLBACK_URL!,
 });
 
- Redirect the User to Pi Login
-Ts
+==== Redirect the User to Pi Login
 // app/api/pi/auth/route.ts
 import { NextResponse } from "next/server";
 import { piClient } from "@/lib/pi";
@@ -70,8 +68,7 @@ export async function GET() {
   return NextResponse.redirect(authUrl);
 }
 
- Handle the Pi Callback
-Ts
+==== Handle the Pi Callback
 // app/api/pi/callback/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { piClient } from "@/lib/pi";
@@ -86,7 +83,7 @@ export async function GET(req: NextRequest) {
 }
 
 
-🔐 Security Model
+====🔐 Security Model
 All Pi authentication verification must occur server-side
 Client input should never be trusted for authentication
 Treat Pi callbacks as authentication events
