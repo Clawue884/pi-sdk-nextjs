@@ -49,7 +49,6 @@ All Pi verification must happen on the server.
 🚀 Basic Usage (Next.js App Router)
 
  Initialize the Pi Client
-Salin kode
 Ts
 // lib/pi.ts
 import { PiClient } from "pi-sdk-nextjs";
@@ -61,7 +60,6 @@ export const piClient = new PiClient({
 });
 
  Redirect the User to Pi Login
-Salin kode
 Ts
 // app/api/pi/auth/route.ts
 import { NextResponse } from "next/server";
@@ -73,7 +71,6 @@ export async function GET() {
 }
 
  Handle the Pi Callback
-Salin kode
 Ts
 // app/api/pi/callback/route.ts
 import { NextRequest, NextResponse } from "next/server";
